@@ -1,4 +1,4 @@
-## Anomaly Detection Findings – e_commerce_transactions Dataset
+## Anomaly Detection Findings – e_commerce_transactions Dataset 
 
 Berdasarkan analisis kolom `decoy_flag` dan `decoy_noise`, saya mengidentifikasi dua anomali utama:
 
