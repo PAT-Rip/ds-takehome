@@ -1,4 +1,4 @@
-application_id,age,monthly_income,loan_amount,previous_defaults,credit_score,default,leak_col_good,leak_col_subtle
+application_id,age,monthly_income,loan_amount,previous_defaults,credit_score,default,leak_col_good,leak_col_subtle 
 501000,41,13995609,5982664,0,624,0,0,-0.04
 501001,58,13683833,3711198,0,809,0,0,0.001
 501002,33,9417391,7172332,0,647,0,0,0.077
