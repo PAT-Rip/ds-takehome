@@ -32,3 +32,12 @@ SELECT *,
 		ELSE 'Low Engagement'
 	END AS segment
 FROM rfm_scored;
+
+-- Repeat Purchase Customer
+SELECT
+	customer_id,
+	COUNT(order_id) AS Order_count
+FROM transaction
+GROUP BY customer_id
+HAVING COUNT(order_id) > 1
+ORDER BY order_count DESC;
