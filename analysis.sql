@@ -34,10 +34,38 @@ SELECT *,
 FROM rfm_scored;
 
 -- Repeat Purchase Customer
+WITH monthly_orders AS (
+    SELECT
+        customer_id,
+        DATE_TRUNC('month', order_date) AS order_month,
+        COUNT(DISTINCT order_id) AS order_count
+    FROM transaction
+    GROUP BY customer_id, order_month
+)
 SELECT
-	customer_id,
-	COUNT(order_id) AS Order_count
-FROM transaction
+    customer_id,
+    COUNT(*) AS repeat_months
+FROM monthly_orders
+WHERE order_count > 1
 GROUP BY customer_id
-HAVING COUNT(order_id) > 1
-ORDER BY order_count DESC;
+ORDER BY repeat_months DESC;
+
+-- EXPLAIN
+EXPLAIN
+WITH monthly_orders AS (
+    SELECT
+        customer_id,
+        DATE_TRUNC('month', order_date) AS order_month,
+        COUNT(DISTINCT order_id) AS order_count
+    FROM transaction
+    GROUP BY customer_id, order_month
+)
+
+SELECT
+    customer_id,
+    COUNT(*) AS repeat_months
+FROM monthly_orders
+WHERE order_count > 1
+GROUP BY customer_id
+ORDER BY repeat_months DESC;
+
