@@ -1,4 +1,4 @@
-# 📦 Tech Test Project Overview
+# 📦 Tech Test Project Overview 
 Proyek ini terdiri dari tiga bagian utama yang mencakup analisis data, pemodelan machine learning, dan validasi model. Setiap bagian menggunakan dataset dan pendekatan berbeda sesuai dengan tujuan analisisnya.
 
 1. analysis.sql
